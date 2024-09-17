@@ -31,7 +31,7 @@ public class Lab5 {
             line = in.readLine();
         }
         in.close(); // Close the file input after reading
-        return lengthFilled; // Return the number of words read
+        return lengthFilled; 
     }
 
     // Method to check if a word exists in the array
