@@ -3,12 +3,12 @@
 import javax.swing.*; // This package allows the program to use JOptionPane
 public class Project0{
     public static void main(String[] args){
-        // Create and intialize variables with placeholders
+        // Create and initialize variables with placeholders
         String inputWord = "NA";
         int Lowercase = 0; 
         int Uppercase = 0;
         // While loop allows the user to run the program multiple times
-        // The program stops when the input is any upper/lower case varition of the word STOP
+        // The program stops when the input is any upper/lower case variation of the word STOP
         while (!inputWord.equals("STOP")) {
             // Update the placeholder for the string inputWord with the user's input
 			inputWord = JOptionPane.showInputDialog(null, "Enter a word: ");
@@ -25,13 +25,13 @@ public class Project0{
 			}
             // This is the output line, although Lowercase and Uppercase are integers
             // They will be converted to strings as they are being concatenated 
-            // \n is used to print these messages on seperate lines
+            // \n is used to print these messages on separate lines
 			JOptionPane.showMessageDialog(null, "Number of lowercase e's: " + Lowercase + "\nNumber of uppercase E's: " + Uppercase);
 		}
     }
     // Pass in the user's input as the only parameter
     public static int checkLowercase(String x){
-        // Intialize an integer to a counter variable that we will return at the end to
+        // Initialize an integer to a counter variable that we will return at the end to
         // determine how many lowercase e's are in the user's input
         int countLower = 0; 
         for(int i=0; i<x.length(); i++){
@@ -47,7 +47,7 @@ public class Project0{
     }
     // Pass in the user's input as the only parameter
     public static int checkUppercase(String x){
-        // Intialize an integer to a counter variable that we will return at the end to
+        // Initialize an integer to a counter variable that we will return at the end to
         // determine how many uppercase E's are in the user's input
         int countUpper = 0;
         for(int j=0; j<x.length(); j++){
