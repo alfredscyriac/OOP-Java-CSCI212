@@ -1,24 +1,24 @@
-// Alfred Siby Cyriac 
-// Lab Section: 121E
-import javax.swing.*; // This package allows us the program to use JOptionPane
+// Author: Alfred Siby Cyriac 
+// CSCI212 Lab Section: 121E
+import javax.swing.*; // This package allows the program to use JOptionPane
 public class Project0{
     public static void main(String[] args){
         // Create and intialize variables with placeholders
         String inputWord = "NA";
         int Lowercase = 0; 
         int Uppercase = 0;
-        // While loop is what allows the user to give in multiple inputs 
-        // The program only stops when the input is STOP 
+        // While loop allows the user to run the program multiple times
+        // The program stops when the input is any upper/lower case varition of the word STOP
         while (!inputWord.equals("STOP")) {
-            // We update the placeholder with the user's actual input
+            // Update the placeholder for the string inputWord with the user's input
 			inputWord = JOptionPane.showInputDialog(null, "Enter a word: ");
-            // If the user's input was the string STOP then the program ends
+            // If the user's input was STOP then the program ends
 			if (inputWord.equalsIgnoreCase("STOP")) {
 				System.exit(0);
 			}
 			else {
+                // Replace placeholder values with the values returned from 2 methods
                 // checkLowercase and checkUppercase are methods that return integers 
-                // and they are going to replace the placeholder values
                 // the updated vales are what will be shown on the screen
                 Lowercase = checkLowercase(inputWord);
                 Uppercase = checkUppercase(inputWord); 
@@ -29,10 +29,10 @@ public class Project0{
 			JOptionPane.showMessageDialog(null, "Number of lowercase e's: " + Lowercase + "\nNumber of uppercase E's: " + Uppercase);
 		}
     }
-    // We are passing in the user's input as the only parameter
+    // Pass in the user's input as the only parameter
     public static int checkLowercase(String x){
-        // intialize an integer to a counter variable that we will return at the end to
-        // determine how lowercase e's are in the user's input
+        // Intialize an integer to a counter variable that we will return at the end to
+        // determine how many lowercase e's are in the user's input
         int countLower = 0; 
         for(int i=0; i<x.length(); i++){
             // checks every character in the string to see if it equals lowercase e
@@ -45,10 +45,10 @@ public class Project0{
         // The int value returned will always be the # of lowercase e's in the method's string parameter
         return countLower; 
     }
-    // We are passing in the user's input as the only parameter
+    // Pass in the user's input as the only parameter
     public static int checkUppercase(String x){
-        // intialize an integer to a counter variable that we will return at the end to
-        // determine how uppercase E's are in the user's input
+        // Intialize an integer to a counter variable that we will return at the end to
+        // determine how many uppercase E's are in the user's input
         int countUpper = 0;
         for(int j=0; j<x.length(); j++){
             // checks every character in the string to see if it equals uppercase E
