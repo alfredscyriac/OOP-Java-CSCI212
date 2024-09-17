@@ -13,7 +13,7 @@ public class Project0{
             // We update the placeholder with the user's actual input
 			inputWord = JOptionPane.showInputDialog(null, "Enter a word: ");
             // If the user's input was the string STOP then the program ends
-			if (inputWord.equals("STOP")) {
+			if (inputWord.equalsIgnoreCase("STOP")) {
 				System.exit(0);
 			}
 			else {
