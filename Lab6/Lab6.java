@@ -24,6 +24,12 @@ public class Lab6 {
         in.close();
         return lengthFilled; 
     }
-
+    public static int sum(int[] myArray, int myArraySize){
+        int total = 0; 
+        for (int i = 0; i < myArraySize; i++) {
+            total += myArray[i]; 
+        }
+        return total;
+    }
     
 }
