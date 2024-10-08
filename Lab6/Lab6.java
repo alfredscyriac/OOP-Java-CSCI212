@@ -11,17 +11,17 @@ public class Lab6 {
         JOptionPane.showMessageDialog(null, "The average of the integers is: " + avg);
     }
 
-    // Method to read words from a file and store them in a string array
-    private static int inputFromFile(String filename, String[] words) {
+    
+    private static int inputFromFile(String filename, int[] nums) {
         TextFileInput in = new TextFileInput(filename);
         int lengthFilled = 0;
         String line = in.readLine();
-        // Read each line from the file and store it in the array
-        while (lengthFilled < words.length && line != null) {
-            words[lengthFilled++] = line; // Store each line as a word
+        
+        while (lengthFilled < nums.length && line != null) {
+            nums[lengthFilled++] = Integer.parseInt(line.trim()); ; 
             line = in.readLine();
         }
-        in.close(); // Close the file input after reading
+        in.close();
         return lengthFilled; 
     }
 
