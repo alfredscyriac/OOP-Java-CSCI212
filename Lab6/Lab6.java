@@ -27,13 +27,13 @@ public class Lab6 {
     public static int sum(int[] myArray, int myArraySize){
         int total = 0; 
         for (int i = 0; i < myArraySize; i++) {
-            total += myArray[i]; 
+            total += myArray[i];  // Add each number to total
         }
         return total;
     }
     public static int average(int[] myArray, int myArraySize){
-        int total = sum(myArray, myArraySize);
-        return total / myArraySize;
+        int total = sum(myArray, myArraySize); // Use sum method we created to get the total
+        return total / myArraySize; // Calculate the average
     }
     
 }
