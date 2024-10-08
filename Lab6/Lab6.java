@@ -1,23 +1,14 @@
 import javax.swing.*;
 public class Lab6 {
     public static void main(String[] args) {
-        String[] wordArray = new String[100]; // Array to hold the words from the file
-        int lengthFilled = inputFromFile("Lab5input.txt", wordArray); // Read words from file into array
-        String isOrIsNot = "is", inputWord = "NA";
+        int[] intArray = new int[100]; // Array to hold ints
+        int lengthFilled = inputFromFile(args[0], intArray); // Read ints from file into array
 
-        while (!inputWord.equals("STOP")) {
-            inputWord = JOptionPane.showInputDialog(null, "Enter a word in all lower case:");
-            if (inputWord.equals("STOP")) {
-                System.exit(0);
-            } else {
-                if (wordIsThere(inputWord, wordArray, lengthFilled))
-                    isOrIsNot = "is";
-                else
-                    isOrIsNot = "is not"; // Set to "is not" if the word is not on the list
-            }
-            // Output to a JOptionPane window whether the word is on the list or not
-            JOptionPane.showMessageDialog(null, "The word " + inputWord + " " + isOrIsNot + " on the list.");
-        }
+        int sum = sum(intArray, lengthFilled);
+        JOptionPane.showMessageDialog(null, "The sum of the integers is: " + sum);
+
+        int avg = average(intArray, lengthFilled);
+        JOptionPane.showMessageDialog(null, "The average of the integers is: " + avg);
     }
 
     // Method to read words from a file and store them in a string array
