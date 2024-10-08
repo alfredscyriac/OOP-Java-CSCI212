@@ -31,7 +31,7 @@ public class Lab6 {
         }
         return total;
     }
-    public static int avergae(int[] myArray, int myArraySize){
+    public static int average(int[] myArray, int myArraySize){
         int total = sum(myArray, myArraySize);
         return total / myArraySize;
     }
