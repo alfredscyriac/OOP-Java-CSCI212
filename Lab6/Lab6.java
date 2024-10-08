@@ -25,13 +25,5 @@ public class Lab6 {
         return lengthFilled; 
     }
 
-    // Method to check if a word exists in the array
-    public static boolean wordIsThere(String findMe, String[] theList, int lengthFilled) {
-        for (int i = 0; i < lengthFilled; i++) {
-            if (theList[i].equals(findMe)) {
-                return true;
-            }
-        }
-        return false;
-    }
+    
 }
