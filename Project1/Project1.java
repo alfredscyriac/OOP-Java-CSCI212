@@ -28,6 +28,10 @@ public class Project1 {
                 microwaves[microwaveCount++] = appliance;
             }
         }
+        // Sort each category using selection sort function
+        selectionSort(refrigerators, fridgeCount);
+        selectionSort(dishwashers, dishwasherCount);
+        selectionSort(microwaves, microwaveCount);
     }
     private static void selectionSort(Appliance[] array, int applianceCount) {
         for (int i = 0; i < applianceCount - 1; i++) {
