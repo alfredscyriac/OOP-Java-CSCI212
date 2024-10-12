@@ -1,5 +1,3 @@
-import java.io.File;
-import java.util.Scanner;
 public class Project1 {
     public static void main(String[] args){
         Appliance[] refrigerators = new Appliance[100];
@@ -7,49 +5,41 @@ public class Project1 {
         Appliance[] microwaves = new Appliance[100];
         Appliance[] appliances = new Appliance[300]; 
         int applianceCount = 0, fridgeCount = 0, dishwasherCount = 0, microwaveCount = 0;
-        File file = new File("Project1.txt");
-        if (!file.exists() || !file.isFile()) {
-            System.out.println("Input file not found. Please ensure Project1.txt is available.");
-            return;
+        TextFileInput fileInput = new TextFileInput("input.txt");
+        // Read the file line by line
+        String line;
+        while ((line = fileInput.readLine()) != null) {
+            appliances[applianceCount++] = new Appliance(line.trim());
         }
-        // This a base case check, if the file has no data then we want to return a message reporting the error
-        Scanner scanner = new Scanner(new File("Project1.txt"));
-        while (scanner.hasNextLine()) {
-            String serialNumber = scanner.nextLine().trim();
-            appliances[applianceCount++] = new Appliance(serialNumber);
-        }
-        scanner.close();
-        // This scanner takes in input from txt file
-        for (int i = 0; i < applianceCount; i++) {
+        fileInput.close();
+        for (int i = 0; i < applianceCount; i++) 
+        {
             Appliance appliance = appliances[i];
-            if (appliance.getApplianceType() == 'R') {
+            if (appliance.getApplianceType() == 'R') 
+            {
                 refrigerators[fridgeCount++] = appliance;
             } 
-            else if (appliance.getApplianceType() == 'D') {
+            else if (appliance.getApplianceType() == 'D') 
+            {
                 dishwashers[dishwasherCount++] = appliance;
             } 
-            else if (appliance.getApplianceType() == 'M') {
+            else if (appliance.getApplianceType() == 'M') 
+            {
                 microwaves[microwaveCount++] = appliance;
             }
         }
     }
-    private static void selectionSort(Appliance[] array, applianceCount)
-    {
-        for (int i = 0; i < applianceCount - 1; i++ ) { 
-            int indexLowest = i; 
-            for ( int j = i + 1; j < applianceCount; j++ )
-            { 
-                if (array[j] < array[indexLowest])
-                {
-                    indexLowest = j;
-                    if (array[indexLowest] < array[i]) 
-                    { 
-                        short temp = array[indexLowest];
-                        array[indexLowest] = array[i]; 
-                        array[i] = temp; 
-                    }
-                } // for i 
-            } // method selectionSort
+    private static void selectionSort(Appliance[] array, int applianceCount) {
+        for (int i = 0; i < applianceCount - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < applianceCount; j++) {
+                if (array[j].compareTo(array[minIndex]) < 0) {
+                    minIndex = j;
+                }
+            }
+            Appliance temp = array[minIndex];
+            array[minIndex] = array[i];
+            array[i] = temp;
         }
     }
 }
