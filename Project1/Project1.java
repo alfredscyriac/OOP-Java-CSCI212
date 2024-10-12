@@ -33,31 +33,32 @@ public class Project1 {
         selectionSort(refrigerators, fridgeCount);
         selectionSort(dishwashers, dishwasherCount);
         selectionSort(microwaves, microwaveCount);
+        // Create our GUI
         JFrame frame = new JFrame("Appliance List");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(new java.awt.GridLayout(1, 3));
-        // Refrigerators display
+        frame.setLayout(new java.awt.GridLayout(1, 3)); // Creates 3 sections/columns for refrigerators, dishwashers, microwave
+        // Refrigerators section will be the first column 
+        // We are printing the sorted array we have of refridgerator serial numbers
         JTextArea fridgeArea = new JTextArea();
         for (int i = 0; i < fridgeCount; i++) {
             fridgeArea.append(refrigerators[i].toString() + "\n");
         }
         frame.add(new JScrollPane(fridgeArea));
-
-        // Dishwashers display
+        // Dishwasher section will be the second/ middle column 
+        // We are printing the sorted array we have of dishwasher serial numbers
         JTextArea dishwasherArea = new JTextArea();
         for (int i = 0; i < dishwasherCount; i++) {
             dishwasherArea.append(dishwashers[i].toString() + "\n");
         }
         frame.add(new JScrollPane(dishwasherArea));
-
-        // Microwaves display
+        // Microwave section will be the third/last column 
+        // We are printing the sorted array we have of microwave serial numbers
         JTextArea microwaveArea = new JTextArea();
         for (int i = 0; i < microwaveCount; i++) {
             microwaveArea.append(microwaves[i].toString() + "\n");
         }
         frame.add(new JScrollPane(microwaveArea));
-
-        // Display the frame
+        // Display the GUI frame
         frame.setSize(600, 400);
         frame.setVisible(true);
     }
