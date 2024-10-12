@@ -33,4 +33,23 @@ public class Project1 {
             }
         }
     }
+    private static void selectionSort(Appliance[] array, applianceCount)
+    {
+        for (int i = 0; i < applianceCount - 1; i++ ) { 
+            int indexLowest = i; 
+            for ( int j = i + 1; j < applianceCount; j++ )
+            { 
+                if (array[j] < array[indexLowest])
+                {
+                    indexLowest = j;
+                    if (array[indexLowest] < array[i]) 
+                    { 
+                        short temp = array[indexLowest];
+                        array[indexLowest] = array[i]; 
+                        array[i] = temp; 
+                    }
+                } // for i 
+            } // method selectionSort
+        }
+    }
 }
