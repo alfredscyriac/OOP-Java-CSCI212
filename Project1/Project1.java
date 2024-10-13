@@ -53,9 +53,10 @@ public class Project1 {
         selectionSort(microwaves, microwaveCount);
         
         // Create our GUI
-        JFrame frame = new JFrame("Appliance List");
+        JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Close the program when the window is closed.
         frame.setLayout(new java.awt.GridLayout(1, 3)); // Creates 3 sections/columns for refrigerators, dishwashers, microwave
+        frame.setTitle("Project1 - Appliance List");
         
         // Refrigerators section will be the first column 
         // We are printing the sorted array we have of refridgerator serial numbers
