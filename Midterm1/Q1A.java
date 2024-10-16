@@ -1,6 +1,6 @@
 public class Q1A {
     public static void main(String args[]){
-        if(args.length<2){
+        if(args.length!=2){
             throw new IllegalArgumentException("Not enough arguements");
         }
         int x = Integer.parseInt(args[0]);
